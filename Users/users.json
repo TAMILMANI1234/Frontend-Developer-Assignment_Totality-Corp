@@ -1,0 +1,202 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "tamil",
+      "password": "tamil"
+    },
+    {
+      "id": "d01a",
+      "username": "harris",
+      "password": "tamil"
+    },
+    {
+      "id": "8a71",
+      "username": "hello",
+      "password": "hello"
+    }
+  ],
+  "cart": [],
+  "data": [
+    {
+      "id": "d0d1",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUo12E1QFx2LdYsgKFSSXHyUoIARdCQj9ZNA&s",
+      "price": "800000",
+      "ownername": "JJ T Promoters",
+      "type": "land",
+      "discription": "Pongalur is an ideal location for buying residential plots in tirupur. This plot in pongalur is a great buy for you.",
+      "district": "tirupur",
+      "state": "tamilnadu",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d2",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjQqQ7FuZRoZds2qPSFcSV7wSAipYGInqYkQ&s",
+      "price": "8000",
+      "ownername": "Aruna krish",
+      "discription": "3BHA",
+      "type": "house",
+      "district": "tiruvanathapuram",
+      "state": "kerala",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d3",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUo12E1QFx2LdYsgKFSSXHyUoIARdCQj9ZNA&s",
+      "price": "1100000",
+      "ownername": "VV traders",
+      "discription": "Looking for Land in Avinashipalayam? Explore great investment options in Queensland.",
+      "type": "land",
+      "district": "tirupur",
+      "state": "tamilnadu",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d4",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToN2bYd1PO3P842qLOQENPho7vOT2sQca0FQ&s",
+      "price": "1000000",
+      "ownername": "JJ promoters",
+      "discription": "Want to invest in Land in Moongilpalayam? Check out Saifield Andavar Avenue, the city's best offering in this category.",
+      "type": "land",
+      "district": "Pune",
+      "state": "Maharastra",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d5",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOOs0c7CgVjNv_QcS9IRdUQOpx_wZKp5FAJQ&s",
+      "price": "5000",
+      "ownername": "Kavin",
+      "discription": "2BHA",
+      "type": "house",
+      "district": "guntoor",
+      "state": "andra pradesh  ",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d6",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_8RKT6GbKMUcGoW6puV8vJ5QwlGoDW3jQwQ&s",
+      "price": "15000",
+      "ownername": "Bana Karthish",
+      "discription": "2BHA",
+      "type": "house",
+      "district": "bengalore",
+      "state": "karnataka",
+      "date": "22.04.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d7",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDTBzCgkcF0r2Ih83fwsDmdGdg1Z1rdw1yVw&s",
+      "price": "7000",
+      "ownername": "Jahanadhan",
+      "type": "land",
+      "discription": "25 cents large farm sites available for sale - East facing Approach road to site by 60feet and 30feet road State highway 165 0.5 kms",
+      "district": "agra",
+      "state": "delhi",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d8",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQ0mnbqSaTWf5ENIWw-PTfo5PtnTVNgITAw&s",
+      "price": "27000",
+      "ownername": "Modi",
+      "discription": "Palladam bus stand back,side dtcp rera approved fully residential area tar road street light water available gated community project.",
+      "type": "land",
+      "district": "hyderabad",
+      "state": "telugana",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d9",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTISfbbSopNKcF_lmq22hr_1affGgAi3SSCHg&s",
+      "price": "19000",
+      "ownername": "Aurn jetly",
+      "discription": "2BHA",
+      "type": "house",
+      "district": "ariyalore",
+      "state": "tamilnadu",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d10",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpcmaubahPTDbnhqYoSSdCL4PLRyWxhpoFJQ&s",
+      "price": "66000",
+      "ownername": "Alvantha",
+      "discription": "2BHA",
+      "type": "apartment",
+      "district": "chennai",
+      "state": "tamilnadu",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d11",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZH5Z5FE4ddY9Pvg9G7k0bVb43RJTbh9IMlg&s",
+      "price": "5000",
+      "ownername": "sarkar",
+      "discription": "3BHA",
+      "type": "apartment",
+      "district": "mumbai",
+      "state": "Maharastra",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d12",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlbUzfMt1xvDccVYeKsuzt9n7mCycYrdiyMQ&s",
+      "price": "10000",
+      "ownername": "tamil",
+      "discription": "2BHA",
+      "type": "apartment",
+      "district": "jaipur",
+      "state": "gujarat",
+      "date": "01.02.2024",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d13",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKEfKYle0kee6PGeAeTGS8AjKFt624EbRCSA&s",
+      "price": "9000",
+      "discription": "2BHA INdependent house",
+      "district": "Tiruppur",
+      "state": "Tamilnadu",
+      "ownername": "Jana Promoters",
+      "date": "24.04.24",
+      "type": "house",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d14",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKEfKYle0kee6PGeAeTGS8AjKFt624EbRCSA&s",
+      "price": "2500",
+      "discription": "2BHA INdependent house with swimming pool, car parking. 1km awway from bus stand",
+      "district": "coimbatore",
+      "state": "Tamilnadu",
+      "ownername": "Jony sines",
+      "date": "25.04.24",
+      "type": "house",
+      "ratings": "5"
+    },
+    {
+      "id": "d0d15",
+      "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoGlKxCyUk_sigDoi-qblBL3xokXZu_zwK6Q&s",
+      "price": "5000",
+      "discription": "2BHA INdependent house",
+      "district": "chennai",
+      "state": "Tamilnadu",
+      "ownername": "KY Traders",
+      "date": "20.04.24",
+      "type": "house",
+      "ratings": "5"
+    }
+  ]
+}

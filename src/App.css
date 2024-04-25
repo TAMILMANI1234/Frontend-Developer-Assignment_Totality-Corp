@@ -1,0 +1,10 @@
+.slick-prev,
+.slick-next {
+  color: #ff0000; /* Change to your desired color */
+}
+
+/* Change arrow hover color */
+.slick-prev:hover,
+.slick-next:hover {
+  color: #00ff00; /* Change to your desired hover color */
+}
