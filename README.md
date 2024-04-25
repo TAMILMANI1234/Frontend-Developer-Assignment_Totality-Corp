@@ -53,6 +53,9 @@
 
   ## Link : https://88acres.netlify.app/ 
 
+  ## once again remind: Start the Json server locally, then the application will shows all Properities.
+  ### Json file is available in repo : Users/users.json 
+
     
    
         
