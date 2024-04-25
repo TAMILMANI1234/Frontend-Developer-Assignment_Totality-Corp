@@ -1,5 +1,5 @@
 # Frontend Developer Assignment_Totality Corp
-### using  React + Vite
+### Using  React + Vite
 
 ------------------------------------------------------------------------------------
 ### Task:
@@ -27,15 +27,16 @@
    ![Screenshot (37)](https://github.com/TAMILMANI1234/Frontend-Developer-Assignment_Totality-Corp/assets/81792499/b79a131c-e3dd-4fc2-a891-fe2f2f0fb773)
  
   
-### Functionality
+### Functionalities
 
               Note: Before starting or runing the application,must start the JSON server Logally,
                 otherwise shows Warning. because Api is not hosted in online. Below command is user to 
                 start the json server.
                   "json-server --watch Users/users.json --port 3500 "
                   
-   1.Login and Regitration:
-        * Landing page of the Application is Lodin Page, Registration page is available by clicking the create account.
+   1. Login and Regitration:
+        * Landing page of the Application is Lodin Page
+        * Registration page is available by clicking the create account.
         * Complete Authentication is provided, except "Token". Routing is prodected
         * Iligal appliction access is occur, it shows 401 Unauthorised
 
@@ -44,9 +45,9 @@
         * Displaying of resent post is available by processing the date.
         * Searching category is available
      
-   3.Cart:
-     * Display the all the advertisent, which are add by user.
-     * Modify the cart, price will be change accoding to modification
+   3. Cart:
+        * Display the all the advertisent, which are add by user.
+        * Modify the cart, price will be change accoding to modification
 
 
 # Application in hosted in Netlify via github deploy.
