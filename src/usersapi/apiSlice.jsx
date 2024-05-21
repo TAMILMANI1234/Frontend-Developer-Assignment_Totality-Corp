@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 //Creating Api
 export const apiSlice = createApi({  
     reducerPath:'apiSlice',  //unique key for reducer
-    baseQuery:fetchBaseQuery({baseUrl:'http://localhost:3001'}), // baseurl from json server
+    baseQuery:fetchBaseQuery({baseUrl:'https://appsail-50019419371.development.catalystappsail.in/'}), // baseurl from json server
     tagTypes:["User","cart","data"], //for Refetching purpose 
     endpoints:(builder)=>({
         adduser:builder.mutation({ //endpoint for add data
