@@ -4,24 +4,20 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 //Creating Api
 export const apiSlice = createApi({  
     reducerPath:'apiSlice',  //unique key for reducer
-    baseQuery:fetchBaseQuery({baseUrl:'http://localhost:3500/'}), // baseurl from json server
-    tagTypes:["User","cart"], //for Refetching purpose 
+    baseQuery:fetchBaseQuery({baseUrl:'http://localhost:3001'}), // baseurl from json server
+    tagTypes:["User","cart","data"], //for Refetching purpose 
     endpoints:(builder)=>({
         adduser:builder.mutation({ //endpoint for add data
             query:(user)=>({
-                url:'/users',
+                url:'/register',
                 method:'POST',
                 body:user,  
             }),
             invalidatesTags:['User']
         }),
-        getusers:builder.query({ //endpoint for fetching all details
-          query:()=>'/users',
-          providesTags:['User']
-        }),
        getdata:builder.query({ //endpoint for fetching all details
-        query:()=>'/data',
-        providesTags:['User']
+        query:()=>'/display_data',
+        providesTags:['data']
        }),
 
         updateuser: builder.mutation({  //endpoint for updating data
@@ -33,26 +29,28 @@ export const apiSlice = createApi({
             invalidatesTags:['User']
           }),
 
-          addToCart: builder.mutation({
-            query: (cart) => ({
-              url: "cart",
+                    getlogin: builder.mutation({
+            query: (credentials) => ({
+              url: '/login',
               method: 'POST',
-              body: cart ,
+              body: credentials,
+            }),
+          }),
+          postdata: builder.mutation({
+            query: (data) => ({
+              url: 'post_data',
+              method: 'POST',
+              body: data,
+            }),
+          }),
+          sendemail: builder.mutation({
+            query: (data) => ({
+              url: 'sendemail',
+              method: 'POST',
+              body: data,
             }),
           }),
 
-          getcart:builder.query({ //endpoint for fetching all details
-            query:()=>'/cart',
-            providesTags:['cart']
-          }),
-
-          removeitemfromcart: builder.mutation({   // endpoint for deleting data
-            query: (id) => ({
-              url: `/cart/${id}`,
-              method: 'DELETE',
-            }),
-            invalidatesTags:['cart']
-          }),
 
     })
 })
@@ -61,9 +59,10 @@ export const apiSlice = createApi({
 export const {
    useAdduserMutation,
    useUpdateuserMutation,
-   useGetusersQuery,
+   useGetloginMutation,
    useGetdataQuery,
    useAddToCartMutation,
    useGetcartQuery,
-   useRemoveitemfromcartMutation
+   useRemoveitemfromcartMutation,
+   usePostdataMutation,useSendemailMutation
    } = apiSlice;

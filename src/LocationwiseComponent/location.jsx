@@ -2,34 +2,16 @@ import React,{useState} from "react";
 import { useGetdataQuery } from "../usersapi/apiSlice";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { useAddToCartMutation } from "../usersapi/apiSlice";
+import 'slick-carousel/slick/slick-theme.css'; 
 import Toast from "../toast";
 import "./location.css";
 
 const Location=()=>{
     const { data:details,isLoading,isSuccess,isError } = useGetdataQuery();
-    const [addToCart] = useAddToCartMutation();
+    
     const [showToast, setShowToast] = useState(false)
 
-    const handleAddToCart = async(product) => {
-        await addToCart(
-         { 
-             "userid":localStorage.getItem("userid"),
-             "productid":product.id,
-             "product_images":product.images,
-             "product_price":product.price,
-             "product_owner":product.ownername,
-             "product_type":product.type,
-             "product_distict":product.district,
-             "product_state":product.state
-         }
-         );
-         setShowToast(true);
-         setTimeout(() => {
-           setShowToast(false);
-         }, 2000); 
-       };
+     
      
       
     const settings={
@@ -82,7 +64,7 @@ const Location=()=>{
                                           <div><p>Rs.{item.price}</p></div>
                                           <div className="">
                                                 <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600" 
-                                                onClick={()=>handleAddToCart(item)}>Add to Cart</button>
+                                                >Add to Cart</button>
                                             </div>
                                      </div>
                                   </div>

@@ -1,37 +1,37 @@
 import React, { useState,useEffect } from "react";
 import { useGetdataQuery } from "../usersapi/apiSlice";
-import { useAddToCartMutation } from "../usersapi/apiSlice";
+import { useSendemailMutation } from "../usersapi/apiSlice";
 import location from "../assets/location.webp";
 import Toast from "../toast";
 import searchimg from "../assets/search.jpg";
+import { useNavigate } from "react-router-dom";
  
 const Fetchall=()=>{
     const { data:details,isLoading,isSuccess,isError } = useGetdataQuery();
-    const [addToCart] = useAddToCartMutation();
+   
     const [search,setsearch]=useState('');
     const [searchbycheck,setsearchbycheck]=useState('');
-    const loged_userid=localStorage.getItem("userid");
+    const loged_email=localStorage.getItem("loggedemail");
     const [showToast, setShowToast] = useState(false)
-    
-    const handleAddToCart = async(product) => {
-       await addToCart(
-        { 
-            "userid":loged_userid,
-            "productid":product.id,
-            "product_images":product.images,
-            "product_price":product.price,
-            "product_owner":product.ownername,
-            "product_type":product.type,
-            "product_distict":product.district,
-            "product_state":product.state
-        }
-        );
+    const [sendmail] = useSendemailMutation();
+    const [error, seterror] = useState('');
+    const navigate = useNavigate();
+    let selleremail="";
+    const sendemail=async(selleremailid)=>{
+        //alert(selleremailid)
+       try{
+        const data={"buyerid":localStorage.getItem("loggedemail"),"to":selleremailid,"subject":"I am Interserted in your Properity","body":"Shall we contact"}
+        await  sendmail(data)
+       }catch(err){
+        seterror(err.error)
         setShowToast(true);
         setTimeout(() => {
           setShowToast(false);
-        }, 2000); 
-      };
+        }, 2000);
+       }
+    }
 
+    
       const handlechecked=(e)=>{
         if (e.target.checked) {
             setsearchbycheck([...searchbycheck, e.target.value]);
@@ -146,9 +146,16 @@ const Fetchall=()=>{
                                                 </div>
                                              </div>
                                             <div className="">
-                                                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600" onClick={()=>handleAddToCart(item)}>Add to Cart</button>
-                                            </div>
-                                            {showToast && <Toast message="Added in cart!" onClose={() => setShowToast(false)} />}
+                                            <div>
+                                               <button onClick={()=>{
+                                                   selleremail=item.email;
+                                                   sendemail(selleremail);
+                                               }} className="bg-indigo-900 p-2 text-white text-xs font-bold rounded-xl text-center">
+                                                    I'm Interested
+                                               </button>
+                                            </div>    
+                                             </div>
+                                            {showToast && <Toast message={error} onClose={() => setShowToast(false)} />}
                                         </div>
                                     </div>
                                </div>
@@ -158,7 +165,11 @@ const Fetchall=()=>{
                       </div>
                        
                  </div>
+                 <button onClick={()=>{navigate("/sell")}} className="fixed bottom-0  right-0 py-3 p-5 m-5  bg-blue-700 text-white text-lg font-bold uppercase shadow-md">
+                     Sale Properity
+                 </button>
               </div>
+              
             }
 
        </div>

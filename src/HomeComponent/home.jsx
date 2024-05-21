@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 import account from "../assets/account.png";
-import cart from "../assets/cart.webp";
 import Resentpost from "../RecentpostComponent/resentpost";
 import Fetchall from "../FetchallComponent/fetchall";
 import Appartment from "../AppartmentComponent/appartment";
@@ -13,7 +12,7 @@ import Location from "../LocationwiseComponent/location";
 
 const Home = ()=>{
     const [authenticated, setauthenticated] = useState(false);
-    const username=localStorage.getItem("loggedusername");
+    const loged_email=localStorage.getItem("loggedemail");
     const navigate = useNavigate();
     useEffect(() => {
         const loggedInUser = localStorage.getItem("authenticated");
@@ -45,7 +44,7 @@ const Home = ()=>{
                             <div className="flex items-center">
                             
                                 <div className="flex-shrink-0 pl-2 text-2xl font-sans font-bold text-white mr-4 ">
-                                  88acres
+                                  Rentify
                                 </div>
                                 
                             </div>
@@ -54,16 +53,13 @@ const Home = ()=>{
 
                                     <img src={account} width={35}  className="rounded-full flex flex-shrink-0" alt="no image" />
                                    <a href="#" className="capitalize text-white font-bold pl-2 hover:text-gray-300 mr-4">  
-                                    {username}
+                                    {loged_email}
                                     </a>
 
                                     <button onClick={()=>{logout()}} className="text-white pr-2 hover:text-gray-300">
                                         Sign out
                                    </button>
-
-                                   <button onClick={()=>{navigate("/cart")}} className="text-white hover:text-gray-300">
-                                        <img src={cart} className="w-10 rounded-full"  alt="no" />
-                                   </button>
+ 
 
                                   
                                 </div>

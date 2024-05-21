@@ -1,31 +1,15 @@
 import Reac,{useState} from "react";
 import {  useGetdataQuery } from "../usersapi/apiSlice";
-import { useAddToCartMutation } from "../usersapi/apiSlice";
+
 import Toast from "../toast";
 
 const Appartment=()=>{
     const { data:appartments,isLoading,isSuccess,isError } = useGetdataQuery();
-    const [addToCart] = useAddToCartMutation();
+  
     const [showToast, setShowToast] = useState(false)
     
-    const handleAddToCart = async(product) => {
-        await addToCart(
-         { 
-             "userid":localStorage.getItem("userid"),
-             "productid":product.id,
-             "product_images":product.images,
-             "product_price":product.price,
-             "product_owner":product.ownername,
-             "product_type":product.type,
-             "product_distict":product.district,
-             "product_state":product.state
-         }
-         );
-         setShowToast(true);
-         setTimeout(() => {
-           setShowToast(false);
-         }, 2000); 
-       };
+ 
+        
      
     return(
      <div>
@@ -55,7 +39,7 @@ const Appartment=()=>{
                                  <div className="pt-2">
                                     <button 
                                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600" 
-                                     onClick={()=>handleAddToCart(item)}>Add to Cart</button>
+                                     >Add to Cart</button>
                                 </div>
                             {showToast && <Toast message="Apartment Added in cart!" onClose={() => setShowToast(false)} />}
                                        

@@ -7,8 +7,7 @@ import { store } from './usersapi/Store.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './HomeComponent/home.jsx';
 import Signup from './SignupComponent/signup.jsx';
-import Cart from './CartComponent/cart.jsx'
-
+import Sell from "./SellproperityComponent/sell";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode >
@@ -18,7 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
              <Route path="/" index element={<App />}></Route>
              <Route path="home" element={<Home />} />
              <Route path="signup" element={<Signup />} />
-             <Route path="cart" element={<Cart />} />
+            
+             <Route path="sell" element={<Sell />} />
 
            </Routes>
          </BrowserRouter>

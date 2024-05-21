@@ -2,38 +2,37 @@ import React,{useState} from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useGetdataQuery,useAddToCartMutation } from "../usersapi/apiSlice";
+import { useGetdataQuery,useSendemailMutation} from "../usersapi/apiSlice";
 import addcart from "../assets/addcart.png";
 import Toast from "../toast";
 
 const Resentpost =()=>{
     const { data:details,isLoading,isSuccess,isError } = useGetdataQuery();
-    const [addToCart] = useAddToCartMutation();
+ 
+    const [sendmail] = useSendemailMutation();
     const date = new Date();
     let currentdate=date.getDate();
     let current_month=date.getMonth()+1;
     const [showToast, setShowToast] = useState(false)
+    let selleremail="";
+    const [error, seterror] = useState('');
   
-
-    const handleAddToCart = async(product) => {
-        await addToCart(
-         { 
-             "userid":localStorage.getItem("userid"),
-             "productid":product.id,
-             "product_images":product.images,
-             "product_price":product.price,
-             "product_owner":product.ownername,
-             "product_type":product.type,
-             "product_distict":product.district,
-             "product_state":product.state
-         }
-         );
-         setShowToast(true);
-         setTimeout(() => {
-           setShowToast(false);
-         }, 2000); 
-       };
      
+       const sendemail=async(selleremailid)=>{
+           //alert(selleremailid)
+          
+           try{
+            const data={"buyerid":localStorage.getItem("loggedemail"),"to":selleremailid,"subject":"I am Interserted in your Properity","body":"Shall we contact"}
+            await  sendmail(data)
+           }catch(err){
+            seterror(err.error)
+            setShowToast(true);
+            setTimeout(() => {
+              setShowToast(false);
+            }, 2000); 
+           }
+       }
+
     const settings={
         dots: true,
         infinite: true,
@@ -101,15 +100,19 @@ const Resentpost =()=>{
                                         </div>
                                         </p>
                                         <p>Location:<span className="text-xs">{resentpost.district},{resentpost.state}</span></p>
-                                        <div className="grid grid-cols-2 gap-2 p-3">
+                                        <div className="m-5 align-middle">
                                             <div>
-                                                  
-                                             </div>
                                             <div>
-                                               <button onClick={()=>handleAddToCart(resentpost)} className="bg-indigo-500 text-white text-sm font-bold rounded-xl text-center">
-                                                  <img src={addcart} className="w-12" alt="" />
+                                               <button onClick={()=>{
+                                                   selleremail=resentpost.email;
+                                                   sendemail(selleremail);
+                                               }} className="bg-indigo-900 p-2 text-white text-xs font-bold rounded-xl text-center">
+                                                    I'm Interested
                                                </button>
-                                            </div>
+                                               </div>
+                                             </div>
+                                            
+                                           
                                            
                                         </div>
                                 </div>
